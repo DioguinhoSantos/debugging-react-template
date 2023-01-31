@@ -1,7 +1,8 @@
 import React from 'react'
-import { Comentario } from './styles'
+import Comentario from './styled'
 
-export default function Comentario(props) {
+export const Comentario = (props) => {
+    
     return (
         <Comentario>
             <input placeholder="Adicionar comentario" />
@@ -10,3 +11,5 @@ export default function Comentario(props) {
         </Comentario>
     )
 }
+
+export default Comentario
