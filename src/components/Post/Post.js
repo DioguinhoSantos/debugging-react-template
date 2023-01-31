@@ -1,23 +1,26 @@
 import React from "react";
 import { PostContainer } from "./styled";
-// import { Comentario } from "../Comnetario";
+import { Comentario } from "../Comentario/Comentario";
 
 
 export const Post = (props) => {
+  // console.log(props.alteraCurtida);
+  console.log(props.post);
   return (
     <PostContainer className={"post-container"}>
       <p>{props.post.texto}</p>
-      <button onClick={() => props.alterarCurtida()}>
-        {props.post.curtida ? "Descurtir" : "Curtir"}
-      </button>
-      <button onClick={() => props.apagaPost()}>Apagar</button>
+      <button onClick={() => props.alteraCurtida()}>{props.post.curtido ? "Descurtir" : "Curtir"}</button>
+      <button onClick={() => props.apagarPost()}>Apagar</button>
       
-      {/* Exercício final de debug. Descomentar só depois de finalizar o debug de post*/}
-      {/* <Comentario
-        comentario={props.comentario}
-        adicionaComentario={props.adicionaComentario}
-        comentarioDoPost={post.comentario}
-      /> */}
+      {
+        <Comentario
+          comentario={props.comentario}
+          adicionaComentario={props.adicionaComentario}
+          comentarioDoPost={post.comentario}
+        /> 
+      }
     </PostContainer>
   );
 };
+
+export default Post;
